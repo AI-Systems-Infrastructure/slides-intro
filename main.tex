@@ -1,0 +1,99 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[T1]{fontenc} 
+\usepackage[default]{sourcesanspro}
+\usepackage{newtxsf}
+\usepackage{hyperref}
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\graphicspath{{./figures/}}
+\usepackage{lipsum}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{fontawesome5}
+
+\usepackage{etoolbox}
+%\usefonttheme[onlymath]{serif}
+
+\author{Yan Lin}
+\title{AI Systems \& Infrastructure}
+\subtitle{MODULE NAME}
+\institute{%
+    \href{https://www.yanlincs.com}{www.yanlincs.com}
+}
+\date{DATE}
+\usepackage{AAU}
+% \AtBeginSection{}  % Remove section title slides
+\AtBeginSubsection{}  % Remove subsection title slides
+\setbeamertemplate{navigation symbols}{}  % Remove bottom nav tools
+% \setbeamertemplate{headline}{}  % Remove top navbar
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+% set colors
+\definecolor{aauyellow}{RGB}{167, 131, 55}
+\definecolor{aaublue}{RGB}{32, 26, 78}
+\definecolor{aaured}{RGB}{152, 43, 28}
+\definecolor{textgrey}{RGB}{60, 60, 60}
+
+\setbeamercolor{normal text}{fg=textgrey}
+\usebeamercolor[fg]{normal text}
+
+\def\emphasis#1{\color{aaured}#1}
+\renewcommand{\thefootnote}{}
+
+
+\lstset{%
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+%- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+    \titlepage
+    \vspace*{-0.6cm}
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[keepaspectratio, scale=0.5]{aau-logo-left-uk}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}    
+\tableofcontents[sectionstyle=show,
+subsectionstyle=show/shaded/hide,
+subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+
+\section{}
+
+\begin{frame}{}
+\end{frame}
+
+
+
+\appendix
+
+\begin{frame}[plain,noframenumbering]
+\begin{center}
+{\large Thank you!}
+\vspace{1cm}
+\\[0.5em]
+{\small \faEnvelope\ \href{mailto:lyan@cs.aau.dk}{lyan@cs.aau.dk} \\
+\faGlobe\ \href{https://www.yanlincs.com}{www.yanlincs.com}}
+\end{center}
+\end{frame}
+
+\end{document}

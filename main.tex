@@ -1,5 +1,5 @@
 \documentclass[aspectratio=169]{beamer}
-\usepackage[T1]{fontenc} 
+\usepackage[T1]{fontenc}
 \usepackage[default]{sourcesanspro}
 \usepackage{newtxsf}
 \usepackage{hyperref}
@@ -19,11 +19,11 @@
 
 \author{Yan Lin}
 \title{AI Systems \& Infrastructure}
-\subtitle{MODULE NAME}
+\subtitle{Introduction}
 \institute{%
     \href{https://www.yanlincs.com}{www.yanlincs.com}
 }
-\date{DATE}
+\date{September 1st, 2026}
 \usepackage{AAU}
 % \AtBeginSection{}  % Remove section title slides
 \AtBeginSubsection{}  % Remove subsection title slides
@@ -42,7 +42,7 @@
 \setbeamercolor{normal text}{fg=textgrey}
 \usebeamercolor[fg]{normal text}
 
-\def\emphasis#1{\color{aaured}#1}
+\def\emphasis#1{{\color{aaured}\textbf{#1}}}
 \renewcommand{\thefootnote}{}
 
 
@@ -57,7 +57,7 @@
     frame=shadowbox,
 }
 
-%- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+%- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 \begin{document}
 
 \begin{frame}[plain,noframenumbering]
@@ -70,18 +70,189 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}    
+\begin{frame}
 \tableofcontents[sectionstyle=show,
 subsectionstyle=show/shaded/hide,
 subsubsectionstyle=show/shaded/hide]
 \end{frame}
 
 
-\section{}
+\section{About}
 
-\begin{frame}{}
+\begin{frame}{About me}
+    Yan Lin (\texttt{\href{mailto:lyan@cs.aau.dk}{lyan@cs.aau.dk}})
+    \begin{itemize}
+        \item Assistant professor in the Department of Computer Science
+        \item Both Bachelor's and PhD degrees in Computer Science
+        \item Research on deep learning and data mining
+        \item Hobbyist full-stack developer, with side projects that occasionally turn semi-commercial
+    \end{itemize}
 \end{frame}
 
+
+\section{Why This Course}
+
+\begin{frame}{What is AI made of?}
+From previous semesters and the Deep Learning course, you already know \textit{part of the answer}.
+\begin{itemize}
+    \item \textbf{AI models}, usually neural networks trained on large amounts of data
+    \item Implemented mostly in Python, with libraries like PyTorch, JAX, and TensorFlow
+    \item Essentially a type of software
+\end{itemize}
+
+\vspace{0.5em}
+But AI models are only the core of AI. A model alone cannot serve millions of people around the globe.
+\end{frame}
+
+\begin{frame}{What is missing around the model?}
+To put AI into every corner of the digital world, AI models need to talk to all kinds of software.
+\begin{itemize}
+    \item Search engines, messaging apps, code editors, smartphone operating systems
+    \item Most of them are not written in Python
+    \item Even Python software is rarely one giant project where everything can just call each other
+\end{itemize}
+
+\vspace{0.5em}
+\emphasis{Question.} How do we let AI models and the rest of the digital world communicate in a standardized, language-agnostic way?
+\end{frame}
+
+\begin{frame}{Why can't I just run it on my laptop?}
+    Top AI models from OpenAI, Anthropic, Google, and Microsoft run in data centers, each drawing the power of a small town.
+    \begin{itemize}
+        \item Why don't they fit on your laptop or smartphone?
+        \item How do these companies manage tens of thousands of machines without setting each one up by hand?
+        \item Can you run a useful AI model at home, on your own hardware?
+    \end{itemize}
+
+    \vspace{0.5em}
+    \emphasis{Question.} What kind of infrastructure and deployment techniques make all of this possible?
+\end{frame}
+
+\begin{frame}{What this course is about}
+    The goal of this course is to answer these questions.
+
+    \vspace{0.5em}
+    \begin{block}{The angle}
+        AI models are the core of an AI system, but they are not the whole AI system.
+        Everything around the model is what makes the model usable at scale.
+    \end{block}
+
+    \begin{block}{The outcome}
+        You will learn industry-standard techniques to replicate what AI companies do, at least the parts that do not require burning millions of euros on supercomputers.
+    \end{block}
+\end{frame}
+
+
+\section{Course Structure}
+
+\begin{frame}{Two parts, plus a mini project}
+\begin{block}{Part A. Interacting with AI Systems (4 modules)}
+    Streamlined and standardized ways for software to talk to AI systems.
+    Go beyond a single \texttt{forward} call inside one Python script.
+\end{block}
+
+\begin{block}{Part B. Infrastructure \& Deployment of AI (5 modules)}
+    Hardware that AI runs on, and how to package, ship, and serve AI systems on real infrastructure.
+    Cloud, edge, and self-hosted.
+\end{block}
+
+\begin{block}{Mini Project (Special module)}
+    Build and deploy your own prototype AI system. The project is the basis for the oral exam.
+\end{block}
+\end{frame}
+
+\begin{frame}{Part A. Interacting with AI Systems}
+Meet the de facto standard for software to communicate with AI systems, the \textbf{Application Programming Interface (API)}.
+
+\begin{itemize}
+    \item \textbf{Module A.1. API fundamentals.} Concepts behind APIs. Play with the API of an existing AI system.
+    \item \textbf{Module A.2. Interacting with APIs in Python.} Integrate AI APIs into your own Python programs.
+    \item \textbf{Module A.3. API servers.} Move from consumer to producer. Build your own API server with FastAPI.
+    \item \textbf{Module A.4. AI API servers.} Wrap an AI model behind your own API server, with authentication, logging, and rate limiting.
+\end{itemize}
+
+\vspace{0.5em}
+By the end of Part A, you have a small but complete AI system that any client can talk to.
+\end{frame}
+
+\begin{frame}{Part B. Infrastructure \& Deployment of AI}
+By the end of Part A you have a working AI system, but it is slow, hard to ship, and tied to your own computer. Part B fixes that.
+
+\begin{itemize}
+    \item \textbf{Module B.1. AI hardware.} Computer architecture, and the hardware specialized for AI such as GPUs, TPUs, and NPUs.
+    \item \textbf{Module B.2. Container fundamentals.} Containers, images, and registries.
+    \item \textbf{Module B.3. AI in containers.} Containerize your AI API server, including GPU access and model weights.
+    \item \textbf{Module B.4. Cloud deployment.} VMs, domains, HTTPS, and reverse proxies.
+    \item \textbf{Module B.5. Edge deployment.} Single-board computers, self-hosting, NAT, and tunnels.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Prerequisites and learning outcomes}
+\begin{block}{Prerequisites}
+    \begin{itemize}
+        \item Basic Python skills, covered in \textit{DAKI1 AI Programming}
+        \item Understanding of how an AI model is built, covered in \textit{DAKI2 AI and Data} and \textit{DAKI3 Deep Learning}
+    \end{itemize}
+\end{block}
+
+\begin{block}{What you will gain}
+    \begin{itemize}
+        \item Build AI systems that interact with the rest of the digital world in a standardized way
+        \item Deploy and serve AI systems on diverse infrastructure
+        \item Become a full-stack AI developer
+    \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Literature, lectures, and exercises}
+    \begin{block}{Literature}
+        Blog posts written for this course, available at \texttt{\href{https://blog.yanlincs.com/ai-system}{blog.yanlincs.com/ai-system}}.
+        \begin{itemize}
+            \item No textbook. The subject changes too fast for that
+            \item Each post contains the concepts, hands-on sections, examples, and an exercise
+            \item External links are optional extended reading
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Lectures}
+        30 to 60 minutes each. An inspirational walkthrough of the module, not a full readout of the literature.
+    \end{block}
+
+    \begin{block}{Exercises}
+        Done after the lecture, with goals and tips at the end of each blog post. You can also work on the mini project during exercise time.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Mini project}
+    \begin{block}{Outcome}
+        An AI API server, deployed as a container on a computer, with a small client program that talks to it.
+    \end{block}
+
+    \begin{itemize}
+        \item More than one endpoint, at least one of them powered by an actual AI model
+        \item Off-the-shelf models from HuggingFace or models you prepared for other courses are fine
+        \item Bonus points for things like database-backed API keys, GPU acceleration, or going public with a domain and HTTPS
+    \end{itemize}
+
+    \vspace{0.5em}
+    Details are in the Mini Project page on the blog and on Moodle.
+\end{frame}
+
+
+
+\section{Getting Started}
+
+\begin{frame}{What to do next}
+    \begin{itemize}
+        \item Bookmark \texttt{\href{https://blog.yanlincs.com/ai-system}{blog.yanlincs.com/ai-system}}
+        \item Study the literature of each module before the lecture
+        \item Skim the Mini Project page early, so the modules feel grounded as we go
+        \item Bring a laptop to lectures. Most modules have something to try live
+    \end{itemize}
+
+    \vspace{1em}
+    Questions about the course, scheduling, or anything practical can go to \texttt{\href{mailto:lyan@cs.aau.dk}{lyan@cs.aau.dk}}.
+\end{frame}
 
 
 \appendix

@@ -108,34 +108,46 @@ subsubsectionstyle=show/shaded/hide]
 \section{Why This Course}
 
 \begin{frame}{What is AI made of?}
-Previous semesters and the Deep Learning course give us \textit{part of the answer}.
-\begin{itemize}
-    \item \textbf{AI models}, usually neural networks trained on large amounts of data
-    \item Implemented mostly in Python, with libraries like PyTorch, JAX, and TensorFlow
-    \item Essentially a type of software
-\end{itemize}
+\begin{columns}[c]
+    \begin{column}{0.6\textwidth}
+        Previous semesters and the Deep Learning course give us \textit{part of the answer}.
+        \begin{itemize}
+            \item \textbf{AI models}, usually neural networks trained on large amounts of data
+            \item Implemented mostly in Python, with libraries like PyTorch, JAX, and TensorFlow
+            \item Essentially a type of software
+        \end{itemize}
 
-\vspace{0.5em}
-  However, \emphasis{AI models alone cannot serve millions of people around the globe}.
-
-% TODO: A diagram
+        \vspace{0.5em}
+        However, \emphasis{AI models alone cannot serve millions of people around the globe}.
+    \end{column}
+    \begin{column}{0.38\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{intro-model-and-code}
+    \end{column}
+\end{columns}
 \note{
 }
 \end{frame}
 
 
 \begin{frame}{What is missing around the model?}
-  To put AI into every corner of the digital world, \textit{AI models need to talk to all kinds of software}.
-\begin{itemize}
-    \item Search engines, messaging apps, code editors, smartphone operating systems
-    \item Most of them are not written in Python
-    \item Even Python software is rarely one giant project where everything can just call each other
-\end{itemize}
+\begin{columns}[c]
+    \begin{column}{0.56\textwidth}
+        To put AI into every corner of the digital world, \textit{AI models need to talk to all kinds of software}.
+        \begin{itemize}
+            \item Search engines, messaging apps, code editors, smartphone operating systems
+            \item Most of them are not written in Python
+            \item Even Python software is rarely one giant project where everything can just call each other
+        \end{itemize}
 
-\vspace{0.5em}
-  How do we let AI models and the rest of the digital world \emphasis{communicate in a standardized, language-agnostic way}?
-
-% TODO: A diagram
+        \vspace{0.5em}
+        How do we let AI models and the rest of the digital world \emphasis{communicate in a standardized, language-agnostic way}?
+    \end{column}
+    \begin{column}{0.42\textwidth}
+        \centering
+        \includegraphics[width=\linewidth,height=0.78\textheight,keepaspectratio]{intro-model-in-software}
+    \end{column}
+\end{columns}
 \note{
 }
 \end{frame}
@@ -152,7 +164,10 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
     \vspace{0.5em}
     What kind of \emphasis{infrastructure and deployment techniques} make all of this possible?
 
-% TODO: Insert figures/lumi.png here, no caption
+    \vspace{0.5em}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth,height=0.34\textheight,keepaspectratio]{lumi}
+    \end{center}
 \note{
 }
 \end{frame}
@@ -187,7 +202,10 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 
 \begin{frame}{10 modules split into two parts}{Part A. Interacting with AI Systems (4 modules)}
     Streamlined and standardized ways for software to talk to AI systems.
-    % TODO: insert figures/part-a-overview.pdf here. No caption.
+    \vspace{0.5em}
+    \begin{center}
+        \includegraphics[width=0.95\textwidth,height=0.72\textheight,keepaspectratio]{part-a-overview}
+    \end{center}
 \note{
 }
 \end{frame}
@@ -195,7 +213,9 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 
 \begin{frame}{10 modules split into two parts}{Part B. Infrastructure \& Deployment of AI (5 modules)}
     Hardware that AI runs on, and how to deploy AI systems on real infrastructure.
-    % TODO: insert figures/part-b-overview.pdf here. No caption.
+    \begin{center}
+        \includegraphics[width=0.95\textwidth,height=0.7\textheight,keepaspectratio]{part-b-overview}
+    \end{center}
 \note{
 }
 \end{frame}
@@ -217,7 +237,9 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 \begin{frame}{Structure of each module}{Literature}
     Blog posts written for this course, available at \texttt{\href{https://blog.yanlincs.com/ai-system}{blog.yanlincs.com/ai-system}}.
 
-    % TODO: insert figure figures/blog.pdf here. No caption.
+    \begin{center}
+        \includegraphics[width=0.78\textwidth,height=0.5\textheight,keepaspectratio]{blog}
+    \end{center}
 
     \live{Structure of the blog site and each blog post.}
 \note{

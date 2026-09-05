@@ -29,6 +29,11 @@
 \AtBeginSubsection{}  % Remove subsection title slides
 \setbeamertemplate{navigation symbols}{}  % Remove bottom nav tools
 % \setbeamertemplate{headline}{}  % Remove top navbar
+\ifdefined\hidenotes\else
+    \setbeameroption{show notes on second screen=right}
+    \setbeamerfont{note page}{size=\large}
+    \hypersetup{pdfkeywords={SP-Right}}
+\fi
 
 % defs
 \def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
@@ -68,6 +73,8 @@
             \includegraphics[keepaspectratio, scale=0.5]{aau-logo-left-uk}
         \end{center}
     \end{figure}
+\note{
+}
 \end{frame}
 
 
@@ -75,6 +82,8 @@
 \tableofcontents[sectionstyle=show,
 subsectionstyle=show/shaded/hide,
 subsubsectionstyle=show/shaded/hide]
+\note{
+}
 \end{frame}
 
 
@@ -89,6 +98,8 @@ subsubsectionstyle=show/shaded/hide]
         \item Research on deep learning and data mining
         \item Hobbyist full-stack developer
     \end{itemize}
+\note{
+}
 \end{frame}
 
 
@@ -107,6 +118,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
   However, \emphasis{AI models alone cannot serve millions of people around the globe}.
 
 % TODO: A diagram
+\note{
+}
 \end{frame}
 
 
@@ -122,6 +135,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
   How do we let AI models and the rest of the digital world \emphasis{communicate in a standardized, language-agnostic way}?
 
 % TODO: A diagram
+\note{
+}
 \end{frame}
 
 
@@ -135,6 +150,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 
     \vspace{0.5em}
     What kind of \emphasis{infrastructure and deployment techniques} make all of this possible?
+\note{
+}
 \end{frame}
 
 
@@ -157,6 +174,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
     \begin{block}{The outcome}
       Learn \textit{industry-standard techniques} to replicate what AI companies do: \emphasis{Implementing and deploying AI systems at scale}.
     \end{block}
+\note{
+}
 \end{frame}
 
 
@@ -175,6 +194,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 \begin{block}{Mini Project (Special module)}
     Build and deploy your own prototype AI system.
 \end{block}
+\note{
+}
 \end{frame}
 
 
@@ -185,6 +206,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
         \item Each post contains the concepts, hands-on sections, examples, and an exercise
         \item External links are optional extended reading
     \end{itemize}
+\note{
+}
 \end{frame}
 
 
@@ -196,6 +219,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
     \begin{block}{Exercises}
         Done after the lecture, with goals and tips at the end of each blog post.
     \end{block}
+\note{
+}
 \end{frame}
 
 
@@ -210,6 +235,8 @@ Previous semesters and the Deep Learning course give us \textit{part of the answ
 {\small \faEnvelope\ \href{mailto:lyan@cs.aau.dk}{lyan@cs.aau.dk} \\
 \faGlobe\ \href{https://www.yanlincs.com}{www.yanlincs.com}}
 \end{center}
+\note{
+}
 \end{frame}
 
 \end{document}

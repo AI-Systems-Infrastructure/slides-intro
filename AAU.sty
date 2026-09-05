@@ -77,6 +77,55 @@
 \setbeamercolor{structure}{fg=aaublue}
 \setbeamercolor{subsection in sidebar}{fg=brown}
 \setbeamercolor{subsection in sidebar shaded}{fg=grey}
+
+\makeatletter
+%% Extended frames.
+%% Write \begin{frame}{Title}[extended] to mark a frame as extended material,
+%% which puts "(Extended)" in front of its title.
+\def\AAU@extendedname{extended}
+\def\AAUextendedprefix{(\textit{Extended}) }
+
+% Title of a normal frame.
+\def\beamer@inlineframetitle#1{%
+  \@ifnextchar[{\AAU@readframetitle{#1}}{\AAU@setframetitle{#1}}%
+}
+\def\AAU@readframetitle#1[#2]{%
+  \def\AAU@frameoption{#2}%
+  \ifx\AAU@frameoption\AAU@extendedname%
+    \def\AAU@nextframetitle{\AAU@setframetitle{\AAUextendedprefix#1}}%
+  \else%
+    \def\AAU@nextframetitle{\AAU@setframetitle{#1}}%
+  \fi%
+  \AAU@nextframetitle%
+}
+\def\AAU@setframetitle#1{%
+  \@ifnextchar\bgroup{\frametitle{#1}\framesubtitle}{\frametitle{#1}\relax}%
+}
+
+% Title of a fragile frame, whose body is written to a file and read back.
+\def\beamer@verbatim@frametitle#1{%
+  \@ifnextchar[{\AAU@readverbatimframetitle{#1}}{\AAU@setverbatimframetitle{#1}}%
+}
+\def\AAU@readverbatimframetitle#1[#2]{%
+  \def\AAU@frameoption{#2}%
+  \ifx\AAU@frameoption\AAU@extendedname%
+    \def\AAU@nextframetitle{\AAU@setverbatimframetitle{\AAUextendedprefix#1}}%
+  \else%
+    \def\AAU@nextframetitle{\AAU@setverbatimframetitle{#1}}%
+  \fi%
+  \AAU@nextframetitle%
+}
+\def\AAU@setverbatimframetitle#1{%
+  \@ifnextchar\bgroup{\beamer@verbatim@framesubtitle{#1}}{%
+    \@temptokena{#1}%
+    \edef\@tempa{\string\frametitle\string{\the\@temptokena\string}}%
+    \@temptokena\expandafter{\@tempa}%
+    \immediate\write\beamer@verbatimfileout{\the\@temptokena}%
+    \beamer@verbatimreadframe%
+  }%
+}
+\makeatother
+
 \AtBeginSection[]{
 	\begin{frame}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]

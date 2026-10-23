@@ -18,8 +18,23 @@ jobs:
       - name: Build all documents
         run: make
 
+      - name: Compose release notes
+        run: |
+          subtitle=$(sed -n 's/^\\subtitle{\(.*\)}$/\1/p' main.tex | sed 's/\\&/\&/g')
+          date=$(sed -n 's/^\\date{\(.*\)}$/\1/p' main.tex)
+          module=${subtitle%%:*}
+          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/main.pdf"
+          cat > out/release-notes.md <<EOF
+          ## $subtitle
+
+          **[Download $module Keynote (PDF)]($url)**
+
+          - Course: [AI Systems & Infrastructure](https://blog.yanlincs.com/ai-system/), Aalborg University
+          - Lecture date: $date
+          EOF
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: out/main.pdf
-          body: "Slides PDF file"
+          body_path: out/release-notes.md
